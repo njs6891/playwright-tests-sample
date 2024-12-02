@@ -1,0 +1,18 @@
+{
+    "request": {
+      "method": "PUT",
+      "urlPattern": "/customers/12345"
+    },
+    "response": {
+      "status": 200,
+      "jsonBody": {
+        "id": "12345",
+        "name": "Updated Mocked Customer",
+        "email": "mocked.customer@example.com"
+      },
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    }
+  }
+  

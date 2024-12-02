@@ -1,0 +1,43 @@
+
+{
+  "version": 1,
+  "title": "Update Customer",
+  "description": "Tests for the Update Customer endpoint",
+  "requests": [
+    {
+      "name": "Update an existing customer",
+      "method": "PUT",
+      "url": "http://localhost:3000/customers/{{customerId}}",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "name": "Updated Name"
+      },
+      "assertions": {
+        "status": 200,
+        "body": {
+          "id": "{{customerId}}",
+          "name": "Updated Name"
+        }
+      }
+    },
+    {
+      "name": "Fail to update non-existent customer",
+      "method": "PUT",
+      "url": "http://localhost:3000/customers/nonexistent",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "name": "Nonexistent Update"
+      },
+      "assertions": {
+        "status": 404,
+        "body": {
+          "error": "Customer not found"
+        }
+      }
+    }
+  ]
+}

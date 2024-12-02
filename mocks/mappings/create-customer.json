@@ -1,0 +1,14 @@
+{
+    "request": {
+      "method": "POST",
+      "url": "/customers"
+    },
+    "response": {
+      "status": 201,
+      "body": "{\"id\": \"1\", \"name\": \"Test Customer\", \"email\": \"test@example.com\"}",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    }
+  }
+  

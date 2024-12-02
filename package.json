@@ -1,0 +1,33 @@
+{
+  "name": "my-api-project",
+  "version": "1.0.0",
+  "description": "A Node.js API project with Koa, Joi, Winston, Morgan, WireMock, Mocha, Playwright, and Postman collections",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test:unit": "npx mocha tests/unit --recursive",
+    "test:functional": "npx playwright test tests/functional",
+    "test:newman": "newman run bruno/collections/create-customer.json && newman run bruno/collections/update-customer.json",
+    "wiremock:start": "node mocks/wiremock-server.js"
+  },
+  "dependencies": {
+    "joi": "^17.9.2",
+    "koa": "^2.14.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-morgan": "^1.0.1",
+    "koa-router": "^10.1.1",
+    "winston": "^3.9.0",
+    "wiremock-client": "^1.0.36"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.49.0",
+    "mocha": "^10.2.0",
+    "newman": "^5.2.3",
+    "playwright": "^1.37.0",
+    "testdouble": "^3.16.5",
+    "wiremock": "^3.9.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

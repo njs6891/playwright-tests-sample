@@ -1,0 +1,49 @@
+
+{
+  "version": 1,
+  "title": "Create Customer",
+  "description": "Tests for the Create Customer endpoint",
+  "requests": [
+    {
+      "name": "Create a new customer",
+      "method": "POST",
+      "url": "http://localhost:3000/customers",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "name": "John Doe",
+        "email": "john.doe@example.com"
+      },
+      "assertions": {
+        "status": 201,
+        "body": {
+          "id": {
+            "exists": true
+          },
+          "name": "John Doe",
+          "email": "john.doe@example.com"
+        }
+      }
+    },
+    {
+      "name": "Fail to create customer with invalid data",
+      "method": "POST",
+      "url": "http://localhost:3000/customers",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "name": ""
+      },
+      "assertions": {
+        "status": 400,
+        "body": {
+          "error": {
+            "exists": true
+          }
+        }
+      }
+    }
+  ]
+}
